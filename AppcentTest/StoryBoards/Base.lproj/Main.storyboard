@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="du8-9L-uE2">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--flickr recent photos-->
+        <scene sceneID="6Re-aI-NLM">
+            <objects>
+                <collectionViewController id="ZRQ-hg-li9" customClass="PhotosCollectionVC" customModule="AppcentTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="vzf-we-tdw">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <collectionViewLayout key="collectionViewLayout" id="T0k-FQ-qlO" customClass="PinterestLayout" customModule="AppcentTest" customModuleProvider="target"/>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="photosCell" id="hgJ-jv-TTV" customClass="PhotosCollectionViewCell" customModule="AppcentTest" customModuleProvider="target">
+                                <rect key="frame" x="75" y="0.0" width="264" height="287"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="jHi-FD-rhx">
+                                    <rect key="frame" x="0.0" y="0.0" width="264" height="287"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lxt-B5-jEd">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="lxt-B5-jEd" firstAttribute="leading" secondItem="jHi-FD-rhx" secondAttribute="leading" id="JjV-nB-lpq"/>
+                                        <constraint firstAttribute="bottom" secondItem="lxt-B5-jEd" secondAttribute="bottom" id="LdL-U8-EVe"/>
+                                        <constraint firstAttribute="trailing" secondItem="lxt-B5-jEd" secondAttribute="trailing" id="reR-Jp-iQ7"/>
+                                        <constraint firstItem="lxt-B5-jEd" firstAttribute="top" secondItem="jHi-FD-rhx" secondAttribute="top" id="tjV-fX-Kt9"/>
+                                    </constraints>
+                                </collectionViewCellContentView>
+                                <size key="customSize" width="264" height="287"/>
+                                <connections>
+                                    <outlet property="image" destination="lxt-B5-jEd" id="snh-Ob-jFC"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="ZRQ-hg-li9" id="JRG-n3-Ita"/>
+                            <outlet property="delegate" destination="ZRQ-hg-li9" id="YXa-gZ-IP5"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" title="flickr recent photos" id="MdU-l8-25b"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aMZ-7f-hBl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-513.04347826086962" y="268.52678571428572"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="87l-1X-zFW">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="du8-9L-uE2" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="dzF-A4-eLU">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ZRQ-hg-li9" kind="relationship" relationship="rootViewController" id="cUG-jV-BhM"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="boM-nO-6fM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1423.1884057971015" y="268.52678571428572"/>
+        </scene>
+    </scenes>
+</document>
